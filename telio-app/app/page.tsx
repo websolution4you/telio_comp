@@ -24,7 +24,9 @@ export default function HomePage() {
       history.scrollRestoration = 'manual';
     }
     window.scrollTo(0, 0);
+  }, []);
 
+  useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
       if (isScrolling) return;
@@ -114,12 +116,12 @@ export default function HomePage() {
           ref={(el) => { sectionRefs.current[0] = el; }}
         >
           <div className="container hero-content">
-            <h1>Branding & creative digital solution</h1>
-            <p>Our website is under construction. We'll be here soon with our new awesome site,<br />subscribe to be notified.</p>
+            <h1>Profesionálne weby a systémy na mieru</h1>
+            <p>Nevytvárame len jednoduché stránky zo šablóny. Navrhujeme funkčné riešenia,<br />ktoré pomáhajú firmám získavať zákazníkov a automatizovať procesy.</p>
             
             <div className="cta-buttons">
-              <a href="#" className="btn btn-primary">Subscribe</a>
-              <a href="#" className="btn btn-outline">Load More <i className="fa-solid fa-chevron-right"></i></a>
+              <a href="#services" className="btn btn-primary" onClick={(e) => { e.preventDefault(); goToSection(3); }}>Naše služby</a>
+              <a href="#portfolio" className="btn btn-outline" onClick={(e) => { e.preventDefault(); goToSection(4); }}>Ukážky prác <i className="fa-solid fa-chevron-right"></i></a>
             </div>
           </div>
           
@@ -145,18 +147,18 @@ export default function HomePage() {
         >
           <div className="container">
             <div className="section-header">
-              <h2>About Us</h2>
+              <h2>Ako pracujeme</h2>
               <div className="divider"></div>
-              <p>Everything you need to know about our Company.</p>
+              <p>Každý projekt navrhujeme individuálne podľa potrieb firmy.</p>
             </div>
             <div className="about-content" style={{ display: 'flex', gap: '40px', textAlign: 'left', maxWidth: '1000px', margin: '0 auto', lineHeight: '1.8', color: 'var(--text-color)', fontSize: '14px' }}>
               <div>
-                <p>Aliquam erat volutpat. Vivamus feugiat risus at accumsan tincidunt. Cras maximus sapien eget elit ullamcorper varius. Vestibulum ligula magna, pulvinar finibus condimentum a, dictum eu turpis. Sed ipsum dui, auctor quis enim eu, pretium tempus felis. Quisque quis erat eget quam viverra varius. Vestibulum leo dolor, aliquam in tortor nec, dignissim pretium nunc. Quisque laoreet iaculis egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse lectus neque, posuere ullamcorper justo sed, consectetur dictum magna. Mauris ullamcorper in quam eget fermentum. Nam vitae mi metus. Aliquam et imperdiet arcu.</p>
+                <p><strong>1. Analýza a stratégia</strong><br />Najskôr si prejdeme, čo firma potrebuje, aké procesy chce zjednodušiť a aké funkcie má web plniť. Potom navrhneme nákladovo efektívne, no pritom inovatívne riešenie, ktoré prinesie maximálne výsledky.</p>
+                <br />
+                <p><strong>2. Návrh a realizácia</strong><br />Vytvoríme vám profesionálnu webstránku rýchlo, jednoducho a za rozumnú cenu. Vždy zabezpečíme kompletné nastavenie témy, hostingu, domény a základnej SEO optimalizácie, aby vás zákazníci zaručene našli na Googli.</p>
               </div>
               <div>
-                <p>Aliquam erat volutpat. Vivamus feugiat risus at accumsan tincidunt. Cras maximus sapien eget elit ullamcorper varius. Vestibulum ligula magna, pulvinar finibus condimentum a, dictum eu turpis. Sed ipsum dui, auctor quis enim eu, pretium tempus felis. Quisque quis erat eget quam viverra varius. Vestibulum leo dolor, aliquam in tortor nec, dignissim pretium nunc. Quisque laoreet iaculis egestas.</p>
-                <br />
-                <p>Praesent vehicula dictum ipsum, ac vehicula ex scelerisque vel. Maecenas ultrices vehicula magna, a pretium quam maximus nec.</p>
+                <p><strong>3. Vzdelávanie a automatizácia</strong><br />Naše weby môžu pre vašu firmu získavať nových zákazníkov, zjednodušiť komunikáciu a automatizovať objednávky či rezervácie. Po dokončení vás vždy kvalitne zaškolíme (aj cez videohovor), aby ste si stránku a jej editovateľné sekcie vedeli jednoducho spravovať aj sami.</p>
               </div>
             </div>
           </div>
@@ -170,20 +172,20 @@ export default function HomePage() {
         >
           <div className="container">
             <div className="section-header">
-              <h2>Meet the Team</h2>
+              <h2>Príklady využitia</h2>
               <div className="divider"></div>
-              <p>Aliquam erat volutpat. Vivamus feugiat risus at accumsan tincidunt. Cras maximus sapien eget elit ullamcorper<br />varius. Vestibulum ligula magna, pulvinar finibus condimentum.</p>
+              <p>Navrhujeme riešenia pre rôzne odvetvia. Každý náš model sa dá upraviť na mieru<br />podľa špecifických potrieb vašej firmy a vašich zákazníkov.</p>
             </div>
 
             <div className="team-grid">
               {[1, 2, 3, 4].map((member) => (
                 <div className="team-card" key={member}>
                   <div className="img-wrapper">
-                    <img src="/assets/team.png" alt="Team Member" />
+                    <img src="/assets/team.png" alt="Ukážka odvetvia" />
                   </div>
                   <div className="card-info">
-                    <h3>{member === 1 ? 'EMILY ROSE' : member === 2 ? 'JESSICA CARROLL' : member === 3 ? 'DAVID BRYANT' : 'AMANDA TANES'}</h3>
-                    <span>{member === 1 ? 'CREATIVE DIRECTOR' : member === 3 ? 'FOUNDER & CEO' : 'PARTNER & COO'}</span>
+                    <h3>{member === 1 ? 'TAXI SLUŽBA' : member === 2 ? 'AUTOSERVIS' : member === 3 ? 'UBYTOVANIE' : 'REŠTAURÁCIE'}</h3>
+                    <span>{member === 1 ? 'AI hlasový dispečer' : member === 2 ? 'Online rezervačný systém' : member === 3 ? 'Rezervačný & riadiaci panel' : 'Objednávky stolov cez web'}</span>
                   </div>
                 </div>
               ))}
@@ -199,26 +201,26 @@ export default function HomePage() {
         >
           <div className="container">
             <div className="section-header">
-              <h2>Our Services</h2>
+              <h2>Čo vieme vytvoriť</h2>
               <div className="divider"></div>
-              <p>We provide a wide range of creative and digital solutions.<br />From corporate branding to full-stack web development.</p>
+              <p>Pripravíme celý arzenál inteligentných digitálnych služieb.<br />Tak, aby váš biznis hladko a neustále bežal aj bez vašej prítomnosti.</p>
             </div>
 
             <div className="services-grid">
               <div className="service-card">
-                <i className="fa-solid fa-pen-nib"></i>
-                <h3>BRANDING</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae tortor sit amet magna.</p>
-              </div>
-              <div className="service-card">
                 <i className="fa-solid fa-laptop-code"></i>
-                <h3>WEB DESIGN</h3>
-                <p>Curabitur pulvinar diam id commodo. Maecenas sed dui posuere, eleifend.</p>
+                <h3>MODERNÉ WEBY</h3>
+                <p>Profesionálna web stránka prispôsobená pre každé zariadenie. Ošetrená SEO optimalizácia, prepojenie s doménou a hostingom.</p>
               </div>
               <div className="service-card">
-                <i className="fa-solid fa-bullhorn"></i>
-                <h3>MARKETING</h3>
-                <p>Aenean vulputate ex ut ipsum suscipit tempus suspendisse imperdiet eu est et.</p>
+                <i className="fa-solid fa-server"></i>
+                <h3>APPKY NA MIERU</h3>
+                <p>Rezervačné a objednávkové systémy, zákaznícke portály či interné firemné dashboardy plné praktických dát a štatistík.</p>
+              </div>
+              <div className="service-card">
+                <i className="fa-solid fa-robot"></i>
+                <h3>AI AUTOMATIZÁCIA</h3>
+                <p>Autonómny hlasový AI dispečer, ktorý dokáže vybaviť hovor, alebo špecializovaný chatbot pre inteligentnú online komunikáciu so zákazníkom.</p>
               </div>
             </div>
           </div>
@@ -276,9 +278,9 @@ export default function HomePage() {
         >
           <div className="container">
             <div className="section-header">
-              <h2>Get In Touch</h2>
+              <h2>Kontakt&nbsp;od&nbsp;150&nbsp;€</h2>
               <div className="divider"></div>
-              <p>Interested in working together? Or just want to say hi?<br />Don't hesitate to reach out to us.</p>
+              <p>Máme za sebou weby pre reštaurácie, kaviarne, autodetailing a e-commerce projekty.<br />Napíšte nám správu a dohodneme sa rýchlo a bez zbytočností.</p>
             </div>
             <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
               <form style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
