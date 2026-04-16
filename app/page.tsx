@@ -2,6 +2,8 @@
 
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { projects } from './data/projects';
 
 export default function HomePage() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
@@ -23,7 +25,23 @@ export default function HomePage() {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
-    window.scrollTo(0, 0);
+
+    // Check if returning from portfolio detail page
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      const sectionIndex = sections.findIndex(s => s.id === hash);
+      if (sectionIndex !== -1) {
+        setCurrentSectionIndex(sectionIndex);
+        // Instant jump without smooth scroll
+        setTimeout(() => {
+          sectionRefs.current[sectionIndex]?.scrollIntoView({
+            behavior: 'auto',
+          });
+        }, 50);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   useEffect(() => {
@@ -236,27 +254,30 @@ export default function HomePage() {
             <div className="section-header">
               <h2>Portfolio</h2>
               <div className="divider"></div>
-              <p>Sed magna elit, blandit sed eros id, auctor ullamcorper ex. Pellentesque aliquet interdum sodales. Praesent<br />lobortis nisi vitae pharetra pharetra. Aliquam vitae elementum ipsum.</p>
+              <p>Pozrite si naše reálne projekty, ktoré priniesli konkrétne výsledky.<br />Od AI automatizácie až po kompletné business riešenia.</p>
             </div>
 
             <div className="carousel-wrapper">
               <button className="nav-btn prev" onClick={() => scrollPortfolio('left')}>
                 <i className="fa-solid fa-chevron-left"></i>
               </button>
-              
+
               <div className="portfolio-grid" ref={portfolioGridRef}>
-                {['LOVE', 'BEAUTIFUL GIRL', 'FUTURE CITY', 'GOLDEN GATE', 'NEON NIGHTS', 'OCEAN VIEW'].map((title) => (
-                  <div className="portfolio-card" key={title}>
-                    <div className="img-wrapper">
-                      <img src="/assets/portfolio.png" alt={title} />
+                {projects.map((project) => (
+                  <Link href={`/portfolio/${project.slug}`} key={project.slug} className="portfolio-card-link">
+                    <div className="portfolio-card">
+                      <div className="img-wrapper">
+                        <img src={project.thumbnail} alt={project.title} />
+                      </div>
+                      <div className="card-info">
+                        <h3>{project.title}</h3>
+                        <span className="project-category">{project.category}</span>
+                      </div>
                     </div>
-                    <div className="card-info">
-                      <h3>{title}</h3>
-                    </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
-              
+
               <button className="nav-btn next" onClick={() => scrollPortfolio('right')}>
                 <i className="fa-solid fa-chevron-right"></i>
               </button>
