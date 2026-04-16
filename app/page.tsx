@@ -88,15 +88,15 @@ export default function HomePage() {
   return (
     <>
       {/* Globálny animovaný overlay */}
-      <div 
-        id="global-overlay" 
+      <div
+        id="global-overlay"
         className={`fixed-overlay ${currentSectionIndex > 0 ? 'fullscreen' : ''}`}
       ></div>
 
       {/* Logo & Mobile Menu */}
       <header className="header">
         <div className="logo">Telio comp</div>
-        <div 
+        <div
           className={`hamburger ${isHamburgerActive ? 'active' : ''}`}
           onClick={() => setIsHamburgerActive(!isHamburgerActive)}
         >
@@ -111,8 +111,8 @@ export default function HomePage() {
         <ul>
           {sections.map((section, index) => (
             <li key={section.id}>
-              <a 
-                href={`#${section.id}`} 
+              <a
+                href={`#${section.id}`}
                 className={currentSectionIndex === index ? 'active' : ''}
                 onClick={(e) => {
                   e.preventDefault();
@@ -128,21 +128,21 @@ export default function HomePage() {
 
       <main className="main-content">
         {/* Hero Sekcia */}
-        <section 
-          id="home" 
+        <section
+          id="home"
           className="section hero-section"
           ref={(el) => { sectionRefs.current[0] = el; }}
         >
           <div className="container hero-content">
             <h1>Profesionálne weby a systémy na mieru</h1>
             <p>Nevytvárame len jednoduché stránky zo šablóny. Navrhujeme funkčné riešenia,<br />ktoré pomáhajú firmám získavať zákazníkov a automatizovať procesy.</p>
-            
+
             <div className="cta-buttons">
               <a href="#services" className="btn btn-primary" onClick={(e) => { e.preventDefault(); goToSection(4); }}>Naše služby</a>
               <a href="#portfolio" className="btn btn-outline" onClick={(e) => { e.preventDefault(); goToSection(2); }}>Ukážky prác <i className="fa-solid fa-chevron-right"></i></a>
             </div>
           </div>
-          
+
           <div className="footer-bottom">
             <div className="copyright">
               &copy; 2026 Tanes. - Všetky práva vyhradené
@@ -158,8 +158,8 @@ export default function HomePage() {
         </section>
 
         {/* About Sekcia */}
-        <section 
-          id="about" 
+        <section
+          id="about"
           className="section about-section"
           ref={(el) => { sectionRefs.current[1] = el; }}
         >
@@ -183,8 +183,8 @@ export default function HomePage() {
         </section>
 
         {/* Portfolio Sekcia */}
-        <section 
-          id="portfolio" 
+        <section
+          id="portfolio"
           className="section portfolio-section"
           ref={(el) => { sectionRefs.current[2] = el; }}
         >
@@ -220,7 +220,7 @@ export default function HomePage() {
                 <i className="fa-solid fa-chevron-right"></i>
               </button>
             </div>
-            
+
             <div className="carousel-dots">
               <span className="dot active"></span>
               <span className="dot"></span>
@@ -230,14 +230,14 @@ export default function HomePage() {
         </section>
 
         {/* Team Sekcia */}
-        <section 
-          id="team" 
+        <section
+          id="team"
           className="section team-section"
           ref={(el) => { sectionRefs.current[3] = el; }}
         >
           <div className="container">
             <div className="section-header">
-              <h2>Príklady využitia</h2>
+              <h2>Team</h2>
               <div className="divider"></div>
               <p>Navrhujeme riešenia pre rôzne odvetvia. Každý náš model sa dá upraviť na mieru<br />podľa špecifických potrieb vašej firmy a vašich zákazníkov.</p>
             </div>
@@ -259,8 +259,8 @@ export default function HomePage() {
         </section>
 
         {/* Services Sekcia */}
-        <section 
-          id="services" 
+        <section
+          id="services"
           className="section services-section"
           ref={(el) => { sectionRefs.current[4] = el; }}
         >
@@ -292,8 +292,8 @@ export default function HomePage() {
         </section>
 
         {/* Contact Sekcia */}
-        <section 
-          id="contact" 
+        <section
+          id="contact"
           className="section contact-section"
           ref={(el) => { sectionRefs.current[5] = el; }}
         >
