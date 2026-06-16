@@ -9,7 +9,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Telio comp - Branding & Creative Digital Solution",
+  title: "TelioLabs - Branding & Creative Digital Solution",
   description: "Branding & creative digital solution for your business.",
 };
 

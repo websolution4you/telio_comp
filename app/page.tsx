@@ -95,7 +95,7 @@ export default function HomePage() {
 
       {/* Logo & Mobile Menu */}
       <header className="header">
-        <div className="logo">Telio comp</div>
+        <div className="logo">TelioLabs</div>
         <div
           className={`hamburger ${isHamburgerActive ? 'active' : ''}`}
           onClick={() => setIsHamburgerActive(!isHamburgerActive)}

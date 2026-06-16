@@ -41,7 +41,7 @@ export default function PortfolioDetailPage({ params }: PageProps) {
       {/* Header s logom a back buttonom */}
       <header className="detail-header">
         <div className="logo" onClick={() => router.push('/')}>
-          Telio comp
+          TelioLabs
         </div>
         <button className="back-btn" onClick={() => router.push('/#portfolio')}>
           <i className="fa-solid fa-arrow-left"></i> Späť na Portfolio
