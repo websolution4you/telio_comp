@@ -158,6 +158,120 @@ export const projects: Project[] = [
   },
 
   {
+    slug: 'jdm-lifts',
+    title: 'JDM Lifts',
+    shortDescription: 'Prezentácia spoločnosti pre profesionálnu montáž a elektrooživenie výťahových systémov',
+    category: 'Web Design',
+    year: '2024',
+    thumbnail: '/assets/portfolio/jdm-lifts/thumbnail.png',
+    liveUrl: 'https://jdmlifts-b1238.web.app/',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'Firebase Hosting'],
+
+    heroImage: '/assets/portfolio/jdm-lifts/hero.png',
+
+    overview: `JDMlifts s.r.o. sa špecializuje na profesionálnu montáž, mechanickú inštaláciu a elektrické oživenie výťahov v spolupráci s poprednými partnermi v obore ako napríklad Schindler v Holandsku. Webová prezentácia kladie dôraz na bezpečnosť, kvalitu práce a certifikované procesy.`,
+
+    challenge: `Vytvoriť reprezentatívny firemný web, ktorý by prehľadne predstavil zameranie firmy, jej služby a partnerstvá pre európsky trh s dôrazom na prísne bezpečnostné predpisy.`,
+
+    solution: `Navrhli sme moderný jednostránkový web v korporátnych farbách s detailným rozpisom služieb, sekciou s číselnými ukazovateľmi úspešnosti a jednoduchým kontaktným formulárom.`,
+
+    results: [
+      'Profesionálna vizitka spoločnosti pre medzinárodných partnerov',
+      'Prehľadne rozdelené sekcie služieb (mechanická časť, elektrická časť)',
+      'Prezentácia kľúčových hodnôt a dôrazu na bezpečnosť pri práci',
+      'Kompletne responzívny web optimalizovaný pre mobilné zobrazenie'
+    ],
+
+    features: [
+      '📱 Plná responzivita - Perfektný vzhľad na počítačoch aj mobiloch',
+      '🏗️ Detailné služby - Rozpis technických fáz montáže výťahov',
+      '📊 Štatistiky úspešnosti - Prehľadné zobrazenie kľúčových firemných ukazovateľov',
+      '✉️ Rýchly kontakt - Jednoduchý formulár a kontaktné údaje pre záujemcov'
+    ],
+
+    images: [
+      '/assets/portfolio/jdm-lifts/hero.png',
+      '/assets/portfolio/jdm-lifts/features.png'
+    ]
+  },
+
+  {
+    slug: 'atelier-inak',
+    title: 'Ateliér INAK',
+    shortDescription: 'Kreatívny web pre umelecký ateliér zameraný na arteterapiu, zážitkové workshopy a vzdelávanie',
+    category: 'Web Design',
+    year: '2024',
+    thumbnail: '/assets/portfolio/atelier-inak/thumbnail.png',
+    liveUrl: 'https://websolution4you.github.io/AtelierInak/index.html',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'GLightbox', 'GitHub Pages'],
+
+    heroImage: '/assets/portfolio/atelier-inak/hero.png',
+
+    overview: `Ateliér INAK, vedený Irenou Lehotskou, je miestom pre tvorivý rozvoj a sebapoznanie. Ponúka individuálnu aj skupinovú arteterapiu, kreatívne workshopy pre deti a dospelých a metodické vzdelávanie pre učiteľov.`,
+
+    challenge: `Vytvoriť priateľský, inšpiratívny a vizuálne pestrý web, ktorý by odrážal slobodnú tvorivú atmosféru ateliéru a zároveň prehľadne štruktúroval rôznorodé služby a workshopy.`,
+
+    solution: `Navrhli sme teplý a umelecky ladený web s farebnou paletou na mieru, interaktívnou galériou prác účastníkov s lightboxom, prehľadnými popismi služieb a referenciami klientov.`,
+
+    results: [
+      'Útulný a inšpiratívny dizajn zodpovedajúci identite ateliéru',
+      'Prehľadná filtrovateľná galéria výtvarných diel',
+      'Zrozumiteľný zoznam workshopov pre deti, dospelých aj školy',
+      'Sekcia s najnovšími aktualitami a chystanými podujatiami'
+    ],
+
+    features: [
+      '🎨 Umelecký vzhľad - Paleta teplých farieb navodzujúca príjemnú atmosféru',
+      '📸 Foto-galéria - Integrácia GLightbox pre pohodlné prezeranie diel',
+      '💬 Referencie účastníkov - Recenzie a spätná väzba od rodičov a klientov',
+      '📰 Aktuality - Priestor pre oznamy o plánovaných kurzoch a akciách'
+    ],
+
+    images: [
+      '/assets/portfolio/atelier-inak/hero.png',
+      '/assets/portfolio/atelier-inak/gallery.png'
+    ]
+  },
+
+  {
+    slug: 'detskezlavy',
+    title: 'DetskéZľavy.sk',
+    shortDescription: 'Agregátor zliav a výhodných ponúk pre deti a rodičov',
+    category: 'Web Design',
+    year: '2024',
+    thumbnail: '/assets/portfolio/detskezlavy/thumbnail.png',
+    liveUrl: 'https://detskezlavy.sk/',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Select2', 'PHP'],
+
+    heroImage: '/assets/portfolio/detskezlavy/hero.png',
+
+    overview: `DetskéZľavy.sk je slovenský zľavový agregátor, ktorý sa špecializuje výhradne na ponuky a akcie spojené s detským tovarom, hračkami, oblečením, či rodinnými zážitkami. Umožňuje užívateľom nájsť najlepšie zľavy na jednom mieste.`,
+
+    challenge: `Vytvoriť prehľadný vyhľadávací a filtračný systém, ktorý umožní rodičom rýchlo vyhľadať zľavy podľa lokality, kategórie alebo výšky zľavy.`,
+
+    solution: `Navrhli sme minimalistické a rýchle prostredie s jednoduchým rozcestníkom zliav na hlavnej stránke (do 30%, do 50%, nad 50%) a vyhľadávacou stránkou s filtrami pomocou Select2.`,
+
+    results: [
+      'Prehľadný agregátor zliav na mieru pre rodičov',
+      'Jednoduché rozdelenie do kategórií podľa výšky zliav',
+      'Filtrovanie ponúk na základe lokality (miest) a kategórií',
+      'Plne responzívne zobrazenie optimalizované pre smartfóny'
+    ],
+
+    features: [
+      '🔍 Filtrovanie a vyhľadávanie - Rýchle vyhľadanie zliav podľa kľúčových slov',
+      '🏷️ Percentuálne sekcie - Rozcestník pre zľavy do 30%, do 50% a nad 50%',
+      '📍 Lokálne ponuky - Možnosť filtrovania podľa miest a krajov',
+      '📧 Newsletter - Registrácia na odber najnovších výhodných ponuk e-mailom'
+    ],
+
+    images: [
+      '/assets/portfolio/detskezlavy/hero.png',
+      '/assets/portfolio/detskezlavy/deals.png'
+    ]
+  },
+
+  {
     slug: 'coming-soon',
     title: 'Ďalšie projekty',
     shortDescription: 'Pripravujeme viac ukážok našej práce',

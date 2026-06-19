@@ -14,8 +14,8 @@ export default function HomePage() {
 
   const sections = [
     { id: 'home', title: 'HOME' },
-    { id: 'about', title: 'ABOUT' },
     { id: 'portfolio', title: 'PORTFOLIO' },
+    { id: 'about', title: 'ABOUT' },
     { id: 'team', title: 'TEAM' },
     { id: 'services', title: 'SERVICES' },
     { id: 'contact', title: 'CONTACT' },
@@ -80,8 +80,10 @@ export default function HomePage() {
 
   const scrollPortfolio = (direction: 'left' | 'right') => {
     if (portfolioGridRef.current) {
-      const scrollAmount = direction === 'left' ? -330 : 330;
-      portfolioGridRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      const card = portfolioGridRef.current.firstElementChild as HTMLElement;
+      const scrollAmount = card ? card.offsetWidth + 20 : 330;
+      const amount = direction === 'left' ? -scrollAmount : scrollAmount;
+      portfolioGridRef.current.scrollBy({ left: amount, behavior: 'smooth' });
     }
   };
 
@@ -139,7 +141,7 @@ export default function HomePage() {
 
             <div className="cta-buttons">
               <a href="#services" className="btn btn-primary" onClick={(e) => { e.preventDefault(); goToSection(4); }}>Naše služby</a>
-              <a href="#portfolio" className="btn btn-outline" onClick={(e) => { e.preventDefault(); goToSection(2); }}>Ukážky prác <i className="fa-solid fa-chevron-right"></i></a>
+              <a href="#portfolio" className="btn btn-outline" onClick={(e) => { e.preventDefault(); goToSection(1); }}>Ukážky prác <i className="fa-solid fa-chevron-right"></i></a>
             </div>
           </div>
 
@@ -157,36 +159,11 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* About Sekcia */}
-        <section
-          id="about"
-          className="section about-section"
-          ref={(el) => { sectionRefs.current[1] = el; }}
-        >
-          <div className="container">
-            <div className="section-header">
-              <h2>Ako pracujeme</h2>
-              <div className="divider"></div>
-              <p>Každý projekt navrhujeme individuálne podľa potrieb firmy.</p>
-            </div>
-            <div className="about-content" style={{ display: 'flex', gap: '40px', textAlign: 'left', maxWidth: '1000px', margin: '0 auto', lineHeight: '1.8', color: 'var(--text-color)', fontSize: '14px' }}>
-              <div>
-                <p><strong>1. Analýza a stratégia</strong><br />Najskôr si prejdeme, čo firma potrebuje, aké procesy chce zjednodušiť a aké funkcie má web plniť. Potom navrhneme nákladovo efektívne, no pritom inovatívne riešenie, ktoré prinesie maximálne výsledky.</p>
-                <br />
-                <p><strong>2. Návrh a realizácia</strong><br />Vytvoríme vám profesionálnu webstránku rýchlo, jednoducho a za rozumnú cenu. Vždy zabezpečíme kompletné nastavenie témy, hostingu, domény a základnej SEO optimalizácie, aby vás zákazníci zaručene našli na Googli.</p>
-              </div>
-              <div>
-                <p><strong>3. Vzdelávanie a automatizácia</strong><br />Naše weby môžu pre vašu firmu získavať nových zákazníkov, zjednodušiť komunikáciu a automatizovať objednávky či rezervácie. Po dokončení vás vždy kvalitne zaškolíme (aj cez videohovor), aby ste si stránku a jej editovateľné sekcie vedeli jednoducho spravovať aj sami.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Portfolio Sekcia */}
         <section
           id="portfolio"
           className="section portfolio-section"
-          ref={(el) => { sectionRefs.current[2] = el; }}
+          ref={(el) => { sectionRefs.current[1] = el; }}
         >
           <div className="container">
             <div className="section-header">
@@ -225,6 +202,31 @@ export default function HomePage() {
               <span className="dot active"></span>
               <span className="dot"></span>
               <span className="dot"></span>
+            </div>
+          </div>
+        </section>
+
+        {/* About Sekcia */}
+        <section
+          id="about"
+          className="section about-section"
+          ref={(el) => { sectionRefs.current[2] = el; }}
+        >
+          <div className="container">
+            <div className="section-header">
+              <h2>Ako pracujeme</h2>
+              <div className="divider"></div>
+              <p>Každý projekt navrhujeme individuálne podľa potrieb firmy.</p>
+            </div>
+            <div className="about-content" style={{ display: 'flex', gap: '40px', textAlign: 'left', maxWidth: '1000px', margin: '0 auto', lineHeight: '1.8', color: 'var(--text-color)', fontSize: '14px' }}>
+              <div>
+                <p><strong>1. Analýza a stratégia</strong><br />Najskôr si prejdeme, čo firma potrebuje, aké procesy chce zjednodušiť a aké funkcie má web plniť. Potom navrhneme nákladovo efektívne, no pritom inovatívne riešenie, ktoré prinesie maximálne výsledky.</p>
+                <br />
+                <p><strong>2. Návrh a realizácia</strong><br />Vytvoríme vám profesionálnu webstránku rýchlo, jednoducho a za rozumnú cenu. Vždy zabezpečíme kompletné nastavenie témy, hostingu, domény a základnej SEO optimalizácie, aby vás zákazníci zaručene našli na Googli.</p>
+              </div>
+              <div>
+                <p><strong>3. Vzdelávanie a automatizácia</strong><br />Naše weby môžu pre vašu firmu získavať nových zákazníkov, zjednodušiť komunikáciu a automatizovať objednávky či rezervácie. Po dokončení vás vždy kvalitne zaškolíme (aj cez videohovor), aby ste si stránku a jej editovateľné sekcie vedeli jednoducho spravovať aj sami.</p>
+              </div>
             </div>
           </div>
         </section>
