@@ -5,6 +5,7 @@ export interface Project {
   category: string;
   year: string;
   thumbnail: string;
+  mobileThumbnail?: string;
   liveUrl?: string;
   technologies: string[];
 
@@ -111,6 +112,7 @@ export const projects: Project[] = [
     category: 'Web Design',
     year: '2024',
     thumbnail: '/assets/portfolio/detskezlavy/thumbnail.png',
+    mobileThumbnail: '/assets/portfolio/detskezlavy/mobile_thumbnail.png',
     liveUrl: 'https://detskezlavy.sk/',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Select2', 'PHP'],
 

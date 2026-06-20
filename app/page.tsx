@@ -212,7 +212,12 @@ export default function HomePage() {
                 <Link href={`/portfolio/${project.slug}`} key={project.slug} className="portfolio-card-link">
                   <div className="portfolio-card">
                     <div className="img-wrapper">
-                      <img src={project.thumbnail} alt={project.title} />
+                      <picture style={{ width: '100%', height: '100%', display: 'block' }}>
+                        {project.mobileThumbnail && (
+                          <source media="(max-width: 900px)" srcSet={project.mobileThumbnail} />
+                        )}
+                        <img src={project.thumbnail} alt={project.title} />
+                      </picture>
                     </div>
                     <div className="card-info">
                       <h3>{project.title}</h3>
