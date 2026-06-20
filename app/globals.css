@@ -779,6 +779,7 @@ a {
     max-height: 70vh;
     display: block;
     object-fit: contain;
+    transition: opacity 0.15s ease-in-out;
 }
 
 .lightbox-close {

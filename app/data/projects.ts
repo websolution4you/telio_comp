@@ -295,7 +295,10 @@ export const projects: Project[] = [
       '✉️ Kontaktný formulár a informácie',
       '⚡ Plne responzívny dizajn pre mobily a počítače'
     ],
-    images: []
+    images: [
+      '/assets/portfolio/milansimon/thumbnail.png',
+      '/assets/portfolio/milansimon/mobile_thumbnail.png'
+    ]
   },
 
   {
