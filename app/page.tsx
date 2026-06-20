@@ -355,7 +355,7 @@ export default function HomePage() {
         >
           <div className="container">
             <div className="section-header">
-              <h2>Kontakt&nbsp;od&nbsp;150&nbsp;€</h2>
+              <h2>Kontakt</h2>
               <div className="divider"></div>
               <p>Máme za sebou weby pre reštaurácie, kaviarne, autonómne hlasové ovládanie a e-commerce projekty.<br />Napíšte nám správu a dohodneme sa rýchlo a bez zbytočností.</p>
             </div>
