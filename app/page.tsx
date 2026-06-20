@@ -10,7 +10,6 @@ export default function HomePage() {
   const [isScrolling, setIsScrolling] = useState(false);
   const [isHamburgerActive, setIsHamburgerActive] = useState(false);
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
-  const portfolioGridRef = useRef<HTMLDivElement>(null);
 
   const sections = [
     { id: 'home', title: 'HOME' },
@@ -78,14 +77,6 @@ export default function HomePage() {
     }, 800);
   };
 
-  const scrollPortfolio = (direction: 'left' | 'right') => {
-    if (portfolioGridRef.current) {
-      const card = portfolioGridRef.current.firstElementChild as HTMLElement;
-      const scrollAmount = card ? card.offsetWidth + 20 : 330;
-      const amount = direction === 'left' ? -scrollAmount : scrollAmount;
-      portfolioGridRef.current.scrollBy({ left: amount, behavior: 'smooth' });
-    }
-  };
 
   return (
     <>
@@ -172,36 +163,20 @@ export default function HomePage() {
               <p>Pozrite si naše reálne projekty, ktoré priniesli konkrétne výsledky.<br />Od AI automatizácie až po kompletné business riešenia.</p>
             </div>
 
-            <div className="carousel-wrapper">
-              <button className="nav-btn prev" onClick={() => scrollPortfolio('left')}>
-                <i className="fa-solid fa-chevron-left"></i>
-              </button>
-
-              <div className="portfolio-grid" ref={portfolioGridRef}>
-                {projects.map((project) => (
-                  <Link href={`/portfolio/${project.slug}`} key={project.slug} className="portfolio-card-link">
-                    <div className="portfolio-card">
-                      <div className="img-wrapper">
-                        <img src={project.thumbnail} alt={project.title} />
-                      </div>
-                      <div className="card-info">
-                        <h3>{project.title}</h3>
-                        <span className="project-category">{project.category}</span>
-                      </div>
+            <div className="portfolio-grid">
+              {projects.map((project) => (
+                <Link href={`/portfolio/${project.slug}`} key={project.slug} className="portfolio-card-link">
+                  <div className="portfolio-card">
+                    <div className="img-wrapper">
+                      <img src={project.thumbnail} alt={project.title} />
                     </div>
-                  </Link>
-                ))}
-              </div>
-
-              <button className="nav-btn next" onClick={() => scrollPortfolio('right')}>
-                <i className="fa-solid fa-chevron-right"></i>
-              </button>
-            </div>
-
-            <div className="carousel-dots">
-              <span className="dot active"></span>
-              <span className="dot"></span>
-              <span className="dot"></span>
+                    <div className="card-info">
+                      <h3>{project.title}</h3>
+                      <span className="project-category">{project.category}</span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </section>
