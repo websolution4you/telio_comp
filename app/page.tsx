@@ -8,6 +8,7 @@ import { projects } from './data/projects';
 export default function HomePage() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
+  const isScrollingRef = useRef(false);
   const [isHamburgerActive, setIsHamburgerActive] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
@@ -47,7 +48,7 @@ export default function HomePage() {
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
-      if (isScrolling) return;
+      if (isScrollingRef.current) return;
 
       if (e.deltaY > 0) {
         goToSection(currentSectionIndex + 1);
@@ -58,12 +59,13 @@ export default function HomePage() {
 
     window.addEventListener('wheel', handleWheel, { passive: false });
     return () => window.removeEventListener('wheel', handleWheel);
-  }, [currentSectionIndex, isScrolling]);
+  }, [currentSectionIndex]);
 
   const goToSection = (index: number) => {
     if (index < 0 || index >= sections.length) return;
-    if (isScrolling && index !== currentSectionIndex) return;
+    if (isScrollingRef.current && index !== currentSectionIndex) return;
 
+    isScrollingRef.current = true;
     setIsScrolling(true);
     setCurrentSectionIndex(index);
 
@@ -75,7 +77,8 @@ export default function HomePage() {
 
     setTimeout(() => {
       setIsScrolling(false);
-    }, 800);
+      isScrollingRef.current = false;
+    }, 1000);
   };
 
 
