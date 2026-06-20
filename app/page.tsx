@@ -357,7 +357,7 @@ export default function HomePage() {
             <div className="section-header">
               <h2>Kontakt&nbsp;od&nbsp;150&nbsp;€</h2>
               <div className="divider"></div>
-              <p>Máme za sebou weby pre reštaurácie, kaviarne, autodetailing a e-commerce projekty.<br />Napíšte nám správu a dohodneme sa rýchlo a bez zbytočností.</p>
+              <p>Máme za sebou weby pre reštaurácie, kaviarne, autonómne hlasové ovládanie a e-commerce projekty.<br />Napíšte nám správu a dohodneme sa rýchlo a bez zbytočností.</p>
             </div>
             <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
               <form style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
