@@ -11,6 +11,7 @@ export default function HomePage() {
   const isScrollingRef = useRef(false);
   const [isHamburgerActive, setIsHamburgerActive] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(6);
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
   const sections = [
@@ -78,6 +79,19 @@ export default function HomePage() {
     }
   }, [currentPage]);
 
+  // Adjust items per page on window resize (client-side only)
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerPage(window.innerWidth <= 900 ? 3 : 6);
+    };
+    
+    // Initial run
+    handleResize();
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const goToSection = (index: number) => {
     if (index < 0 || index >= sections.length) return;
     if (isScrollingRef.current && index !== currentSectionIndex) return;
@@ -99,9 +113,15 @@ export default function HomePage() {
   };
 
 
-  const ITEMS_PER_PAGE = 6;
-  const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
-  const paginatedProjects = projects.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(projects.length / itemsPerPage);
+  const paginatedProjects = projects.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+  // Clamp current page if it becomes out of bounds due to resize
+  useEffect(() => {
+    if (currentPage > totalPages && totalPages > 0) {
+      setCurrentPage(totalPages);
+    }
+  }, [totalPages, currentPage]);
 
   return (
     <>
