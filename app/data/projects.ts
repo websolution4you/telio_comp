@@ -105,44 +105,6 @@ export const projects: Project[] = [
   },
 
   {
-    slug: 'atelier-inak',
-    title: 'Ateliér INAK',
-    shortDescription: 'Kreatívny web pre umelecký ateliér zameraný na arteterapiu, zážitkové workshopy a vzdelávanie',
-    category: 'Web Design',
-    year: '2024',
-    thumbnail: '/assets/portfolio/atelier-inak/thumbnail.png',
-    liveUrl: 'https://websolution4you.github.io/AtelierInak/index.html',
-    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'GLightbox', 'GitHub Pages'],
-
-    heroImage: '/assets/portfolio/atelier-inak/hero.png',
-
-    overview: `Ateliér INAK, vedený Irenou Lehotskou, je miestom pre tvorivý rozvoj a sebapoznanie. Ponúka individuálnu aj skupinovú arteterapiu, kreatívne workshopy pre deti a dospelých a metodické vzdelávanie pre učiteľov.`,
-
-    challenge: `Vytvoriť priateľský, inšpiratívny a vizuálne pestrý web, ktorý by odrážal slobodnú tvorivú atmosféru ateliéru a zároveň prehľadne štruktúroval rôznorodé služby a workshopy.`,
-
-    solution: `Navrhli sme teplý a umelecky ladený web s farebnou paletou na mieru, interaktívnou galériou prác účastníkov s lightboxom, prehľadnými popismi služieb a referenciami klientov.`,
-
-    results: [
-      'Útulný a inšpiratívny dizajn zodpovedajúci identite ateliéru',
-      'Prehľadná filtrovateľná galéria výtvarných diel',
-      'Zrozumiteľný zoznam workshopov pre deti, dospelých aj školy',
-      'Sekcia s najnovšími aktualitami a chystanými podujatiami'
-    ],
-
-    features: [
-      '🎨 Umelecký vzhľad - Paleta teplých farieb navodzujúca príjemnú atmosféru',
-      '📸 Foto-galéria - Integrácia GLightbox pre pohodlné prezeranie diel',
-      '💬 Referencie účastníkov - Recenzie a spätná väzba od rodičov a klientov',
-      '📰 Aktuality - Priestor pre oznamy o plánovaných kurzoch a akciách'
-    ],
-
-    images: [
-      '/assets/portfolio/atelier-inak/hero.png',
-      '/assets/portfolio/atelier-inak/gallery.png'
-    ]
-  },
-
-  {
     slug: 'detskezlavy',
     title: 'DetskéZľavy.sk',
     shortDescription: 'Agregátor zliav a výhodných ponúk pre deti a rodičov',
@@ -177,6 +139,44 @@ export const projects: Project[] = [
     images: [
       '/assets/portfolio/detskezlavy/hero.png',
       '/assets/portfolio/detskezlavy/deals.png'
+    ]
+  },
+
+  {
+    slug: 'atelier-inak',
+    title: 'Ateliér INAK',
+    shortDescription: 'Kreatívny web pre umelecký ateliér zameraný na arteterapiu, zážitkové workshopy a vzdelávanie',
+    category: 'Web Design',
+    year: '2024',
+    thumbnail: '/assets/portfolio/atelier-inak/thumbnail.png',
+    liveUrl: 'https://websolution4you.github.io/AtelierInak/index.html',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'GLightbox', 'GitHub Pages'],
+
+    heroImage: '/assets/portfolio/atelier-inak/hero.png',
+
+    overview: `Ateliér INAK, vedený Irenou Lehotskou, je miestom pre tvorivý rozvoj a sebapoznanie. Ponúka individuálnu aj skupinovú arteterapiu, kreatívne workshopy pre deti a dospelých a metodické vzdelávanie pre učiteľov.`,
+
+    challenge: `Vytvoriť priateľský, inšpiratívny a vizuálne pestrý web, ktorý by odrážal slobodnú tvorivú atmosféru ateliéru a zároveň prehľadne štruktúroval rôznorodé služby a workshopy.`,
+
+    solution: `Navrhli sme teplý a umelecky ladený web s farebnou paletou na mieru, interaktívnou galériou prác účastníkov s lightboxom, prehľadnými popismi služieb a referenciami klientov.`,
+
+    results: [
+      'Útulný a inšpiratívny dizajn zodpovedajúci identite ateliéru',
+      'Prehľadná filtrovateľná galéria výtvarných diel',
+      'Zrozumiteľný zoznam workshopov pre deti, dospelých aj školy',
+      'Sekcia s najnovšími aktualitami a chystanými podujatiami'
+    ],
+
+    features: [
+      '🎨 Umelecký vzhľad - Paleta teplých farieb navodzujúca príjemnú atmosféru',
+      '📸 Foto-galéria - Integrácia GLightbox pre pohodlné prezeranie diel',
+      '💬 Referencie účastníkov - Recenzie a spätná väzba od rodičov a klientov',
+      '📰 Aktuality - Priestor pre oznamy o plánovaných kurzoch a akciách'
+    ],
+
+    images: [
+      '/assets/portfolio/atelier-inak/hero.png',
+      '/assets/portfolio/atelier-inak/gallery.png'
     ]
   },
 
