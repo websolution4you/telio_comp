@@ -165,7 +165,6 @@ export default function HomePage() {
             <div className="section-header">
               <h2>Portfolio</h2>
               <div className="divider"></div>
-              <p>Pozrite si naše reálne projekty, ktoré priniesli konkrétne výsledky.<br />Od AI automatizácie až po kompletné business riešenia.</p>
             </div>
 
             <div className="portfolio-grid">

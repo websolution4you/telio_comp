@@ -342,6 +342,7 @@ a {
 .portfolio-card {
     display: flex;
     flex-direction: column;
+    height: 280px;
 }
 
 .team-card:hover, .portfolio-card:hover {
@@ -439,6 +440,11 @@ a {
 .portfolio-section {
     position: relative;
     background: transparent;
+    padding: 60px 0;
+}
+
+.portfolio-section .section-header {
+    margin-bottom: 30px;
 }
 
 .portfolio-section .container {
@@ -450,10 +456,10 @@ a {
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 25px;
     width: 100%;
-    padding: 20px 0;
-    min-height: 750px;
+    padding: 10px 0;
+    min-height: 585px;
 }
 
 .portfolio-card {
