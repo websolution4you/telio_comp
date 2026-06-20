@@ -27,6 +27,7 @@ export const projects: Project[] = [
     category: 'AI Automation & Dashboard',
     year: '2024',
     thumbnail: '/assets/portfolio/telio/thumbnail.png',
+    mobileThumbnail: '/assets/portfolio/telio/mobile_thumbnail.png',
     liveUrl: 'https://telio.sk',
     technologies: ['Next.js', 'React', 'AI Voice Assistant', 'Real-time Dashboard', 'WebSocket', 'Analytics'],
 
@@ -74,6 +75,7 @@ export const projects: Project[] = [
     category: 'Web Design',
     year: '2024',
     thumbnail: '/assets/portfolio/jdm-lifts/thumbnail.png',
+    mobileThumbnail: '/assets/portfolio/jdm-lifts/mobile_thumbnail.png',
     liveUrl: 'https://jdmlifts-b1238.web.app/',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'Firebase Hosting'],
 
@@ -151,6 +153,7 @@ export const projects: Project[] = [
     category: 'Web Design',
     year: '2024',
     thumbnail: '/assets/portfolio/atelier-inak/thumbnail.png',
+    mobileThumbnail: '/assets/portfolio/atelier-inak/mobile_thumbnail.png',
     liveUrl: 'https://websolution4you.github.io/AtelierInak/index.html',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'GLightbox', 'GitHub Pages'],
 
@@ -189,6 +192,7 @@ export const projects: Project[] = [
     category: 'Web Design',
     year: '2024',
     thumbnail: '/assets/portfolio/leutschau/thumbnail.png',
+    mobileThumbnail: '/assets/portfolio/leutschau/mobile_thumbnail.png',
     liveUrl: 'https://websolution4you.github.io/LeutschauCaffe/',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'Bootstrap'],
 
@@ -236,6 +240,7 @@ export const projects: Project[] = [
     category: 'Web Design',
     year: '2024',
     thumbnail: '/assets/portfolio/planeta-levoca/thumbnail.png',
+    mobileThumbnail: '/assets/portfolio/planeta-levoca/mobile_thumbnail.png',
     liveUrl: 'https://websolution4you.github.io/PlanetaLevoca/',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Google Sheets Integration', 'Admin Panel'],
 
