@@ -11,7 +11,7 @@ export default function HomePage() {
   const isScrollingRef = useRef(false);
   const [isHamburgerActive, setIsHamburgerActive] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(6);
+  const [itemsPerPage, setItemsPerPage] = useState(4);
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
   const sections = [
@@ -82,7 +82,7 @@ export default function HomePage() {
   // Adjust items per page on window resize (client-side only)
   useEffect(() => {
     const handleResize = () => {
-      setItemsPerPage(window.innerWidth <= 900 ? 3 : 6);
+      setItemsPerPage(window.innerWidth <= 900 ? 3 : 4);
     };
     
     // Initial run
