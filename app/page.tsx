@@ -330,11 +330,16 @@ export default function HomePage() {
               <p>Máme za sebou weby pre reštaurácie, kaviarne, autonómne hlasové ovládanie a e-commerce projekty.<br />Napíšte nám správu a dohodneme sa rýchlo a bez zbytočností.</p>
             </div>
             <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
-              <form style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                <input type="text" placeholder="Your Name" style={{ padding: '15px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff' }} />
-                <input type="email" placeholder="Your Email" style={{ padding: '15px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff' }} />
-                <textarea placeholder="Your Message" rows={5} style={{ padding: '15px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff', resize: 'none' }}></textarea>
-                <button type="button" className="btn btn-outline" style={{ alignSelf: 'center', marginTop: '15px', cursor: 'pointer' }}>Send Message</button>
+              <form action="https://formsubmit.co/info@telio.sk" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                {/* Anti-spam honeypot */}
+                <input type="text" name="_honey" style={{ display: 'none' }} />
+                {/* Disable Captcha for smoother experience */}
+                <input type="hidden" name="_captcha" value="false" />
+                
+                <input type="text" name="name" required placeholder="Vaše Meno" style={{ padding: '15px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff' }} />
+                <input type="email" name="email" required placeholder="Váš E-mail" style={{ padding: '15px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff' }} />
+                <textarea name="message" required placeholder="Vaša Správa" rows={5} style={{ padding: '15px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff', resize: 'none' }}></textarea>
+                <button type="submit" className="btn btn-outline" style={{ alignSelf: 'center', marginTop: '15px', cursor: 'pointer' }}>Odoslať správu</button>
               </form>
             </div>
           </div>
