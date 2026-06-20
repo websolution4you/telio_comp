@@ -175,7 +175,7 @@ export default function HomePage() {
         >
           <div className="container hero-content">
             <h1>Profesionálne weby a systémy na mieru</h1>
-            <p>Nevytvárame len jednoduché stránky zo šablóny. Navrhujeme funkčné riešenia,<br />ktoré pomáhajú firmám získavať zákazníkov a automatizovať procesy.</p>
+            <p>Nevytvárame len jednoduché stránky zo šablóny. Navrhujeme funkčné riešenia,<br />ktoré pomáhajú firmám získavať zákazníkov a prispôsobujeme funkčnosť ich potrebám.</p>
 
             <div className="cta-buttons">
               <a href="#services" className="btn btn-primary" onClick={(e) => { e.preventDefault(); goToSection(4); }}>Naše služby</a>
