@@ -61,6 +61,23 @@ export default function HomePage() {
     return () => window.removeEventListener('wheel', handleWheel);
   }, [currentSectionIndex]);
 
+  const isFirstMount = useRef(true);
+
+  // Scroll back to top of Portfolio when switching pages
+  useEffect(() => {
+    if (isFirstMount.current) {
+      isFirstMount.current = false;
+      return;
+    }
+    const portfolioSection = sectionRefs.current[1];
+    if (portfolioSection) {
+      portfolioSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }, [currentPage]);
+
   const goToSection = (index: number) => {
     if (index < 0 || index >= sections.length) return;
     if (isScrollingRef.current && index !== currentSectionIndex) return;
