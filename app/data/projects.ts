@@ -67,97 +67,6 @@ export const projects: Project[] = [
   },
 
   {
-    slug: 'leutschau-caffe',
-    title: 'Leutschau Café',
-    shortDescription: 'Webová prezentácia historickej kaviarní v srdci Levoče s online menu a galériu',
-    category: 'Web Design',
-    year: '2024',
-    thumbnail: '/assets/portfolio/leutschau/thumbnail.png',
-    liveUrl: 'https://websolution4you.github.io/LeutschauCaffe/',
-    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'Bootstrap'],
-
-    heroImage: '/assets/portfolio/leutschau/hero-main.png',
-
-    overview: `Leutschau Café je historická kaviareň v Levoči, ktorá sídli v mešťianskom dome z 15. storočia. Vytvorili sme pre nich web, ktorý kombinuje historický charakter s moderným dizajnom a poskytuje návštevníkom všetky potrebné informácie.`,
-
-    challenge: `Kaviareň potrebovala webovú stránku, ktorá by odzrkadľovala jej jedinečný historický charakter a zároveň poskytla moderné funkcie ako online menu, galériu a kontaktný formulár. Dôležité bolo zachovať autentický pocit tradície pri zachovaní prehľadnosti a použiteľnosti.`,
-
-    solution: `Navrhli sme elegantný responzívny web s čistým dizajnom, ktorý zdôrazňuje históriu kaviarene. Implementovali sme jednoduchú navigáciu, filtrovateľné online menu s cenami, foto galériu a kontaktný formulár. Celý web je optimalizovaný pre všetky zariadenia.`,
-
-    results: [
-      'Profesionálna webová prezentácia historickej kaviarní',
-      'Online menu s kategóriami (Káva, Nealko, Pivo, Alkohol)',
-      'Galéria s autentickými fotografiami priestorov',
-      'Responzívny dizajn fungujúci na všetkých zariadeniach',
-      'SEO optimalizácia pre lepšiu viditeľnosť v Levoči'
-    ],
-
-    features: [
-      '📱 Responzívny Design - Dokonale funguje na mobile, tablete aj desktope',
-      '☕ Online Menu - Prehľadný nápojový lístok s cenami a kategóriami',
-      '📸 Galéria - Fotografie interiéru a historických detailov',
-      '📝 Kontaktný Formulár - Jednoduchá komunikácia s majiteľmi',
-      '🏛️ História Kaviarene - Timeline od roku 2012 po súčasnosť',
-      '💼 Sekcia Kariéry - Stránka pre nábor nových zamestnancov',
-      '🎨 Historický Dizajn - Autentický vzhľad zachovávajúci tradíciu',
-      '⚡ Rýchle Načítanie - Optimalizované obrázky a kód'
-    ],
-
-    images: [
-      '/assets/portfolio/leutschau/hero-main.png', // 0 - Hero s atmosférou
-      '/assets/portfolio/leutschau/menu.png',      // 1 - Menu s cenami
-      '/assets/portfolio/leutschau/gallery.png',   // 2 - Galéria
-      '/assets/portfolio/leutschau/history.png',   // 3 - História timeline
-      '/assets/portfolio/leutschau/contact.png',   // 4 - Kontakt
-      '/assets/portfolio/leutschau/careers.png'    // 5 - Kariéra
-    ]
-  },
-
-  {
-    slug: 'planeta-levoca',
-    title: 'Planéta Levoča',
-    shortDescription: 'Reštauračný web s jedlálnym lístkom upraviteľným majiteľom bez potreby programátora',
-    category: 'Web Design',
-    year: '2024',
-    thumbnail: '/assets/portfolio/planeta-levoca/thumbnail.png',
-    liveUrl: 'https://websolution4you.github.io/PlanetaLevoca/',
-    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Google Sheets Integration', 'Admin Panel'],
-
-    heroImage: '/assets/portfolio/planeta-levoca/hero.png',
-
-    overview: `Planéta Levoča je príjemná reštaurácia v centre Levoče, ktorá ponúka slovenskú a medzinárodnú kuchyňu. Vytvorili sme pre nich moderný web s unikátnou funkciou - majiteľ si sám upravuje jedálny lístok bez potreby kontaktovať programátora.`,
-
-    challenge: `Reštaurácia potrebovala web s editorom menu, ktorý by mohla upravovať bez technických vedomostí. Klasické riešenie by si vyžadovalo pravidelné aktualizácie a kontakt s vývojárom. Bolo treba nájsť jedno jednoduché a efektívne riešenie.`,
-
-    solution: `Integrácia s Google Sheets umožňuje majiteľovi upravovať menu priamo v tabuľke, a zmeny sa automaticky zobrazia na webe. Zároveň existuje aj ruční admin panel ako záloha. Všetko je jednoduché a intuitívne.`,
-
-    results: [
-      'Majiteľ si sám upravuje menu bez technickej pomoci',
-      'Denné menu sa synkuje automaticky z Google Sheets',
-      'Jednoduchý admin panel s ruštinou spätne ako záloha',
-      'Profesionálny web s galériou a info o reštaurácii',
-      'Plne responzívny design pre všetky zariadenia'
-    ],
-
-    features: [
-      '🍽️ Editovateľné Menu - Majiteľ si upravuje bez programátora',
-      '📊 Google Sheets Integrácia - Automatická synchronizácia',
-      '📅 Denné Menu - Týždenný program s cenami',
-      '⚙️ Admin Panel - Jednoduchá editácia v prípade potreby',
-      '📸 Galéria - Fotografie jedál a reštaurácie',
-      '📞 Kontakt a Info - Rezervácie, otváracie hodiny, catering',
-      '🎨 Moderný Dizajn - Zlatá a oranžová farebnosť',
-      '📱 Responzívny Web - Dokonalý na mobile aj desktope'
-    ],
-
-    images: [
-      '/assets/portfolio/planeta-levoca/hero.png',        // 0 - Hero s zámkom
-      '/assets/portfolio/planeta-levoca/menu.png',        // 1 - Denné menu
-      '/assets/portfolio/planeta-levoca/admin-panel.png'  // 2 - Admin panel na editáciu
-    ]
-  },
-
-  {
     slug: 'jdm-lifts',
     title: 'JDM Lifts',
     shortDescription: 'Prezentácia spoločnosti pre profesionálnu montáž a elektrooživenie výťahových systémov',
@@ -245,7 +154,7 @@ export const projects: Project[] = [
 
     heroImage: '/assets/portfolio/detskezlavy/hero.png',
 
-    overview: `DetskéZľavy.sk je slovenský zľavový agregátor, ktorý sa špecializuje výhradne na ponuky a akcie spojené s detským tovarom, hračkami, oblečením, či rodinnými zážitkami. Umožňuje užívateľom nájsť najlepšie zľavy na jednom mieste.`,
+    overview: `DetskéZľavy.sk is a Slovak discount aggregator that specializes exclusively on offers and deals related to baby goods, toys, clothes, or family experiences. It allows users to find the best discounts in one place.`,
 
     challenge: `Vytvoriť prehľadný vyhľadávací a filtračný systém, ktorý umožní rodičom rýchlo vyhľadať zľavy podľa lokality, kategórie alebo výšky zľavy.`,
 
@@ -268,6 +177,97 @@ export const projects: Project[] = [
     images: [
       '/assets/portfolio/detskezlavy/hero.png',
       '/assets/portfolio/detskezlavy/deals.png'
+    ]
+  },
+
+  {
+    slug: 'leutschau-caffe',
+    title: 'Leutschau Café',
+    shortDescription: 'Webová prezentácia historickej kaviarní v srdci Levoče s online menu a galériu',
+    category: 'Web Design',
+    year: '2024',
+    thumbnail: '/assets/portfolio/leutschau/thumbnail.png',
+    liveUrl: 'https://websolution4you.github.io/LeutschauCaffe/',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'Bootstrap'],
+
+    heroImage: '/assets/portfolio/leutschau/hero-main.png',
+
+    overview: `Leutschau Café je historická kaviareň v Levoči, ktorá sídli v mešťianskom dome z 15. storočia. Vytvorili sme pre nich web, ktorý kombinuje historický charakter s moderným dizajnom a poskytuje návštevníkom všetky potrebné informácie.`,
+
+    challenge: `Kaviareň potrebovala webovú stránku, ktorá by odzrkadľovala jej jedinečný historický charakter a zároveň poskytla moderné funkcie ako online menu, galériu a kontaktný formulár. Dôležité bolo zachovať autentický pocit tradície pri zachovaní prehľadnosti a použiteľnosti.`,
+
+    solution: `Navrhli sme elegantný responzívny web s čistým dizajnom, ktorý zdôrazňuje históriu kaviarene. Implementovali sme jednoduchú navigáciu, filtrovateľné online menu s cenami, foto galériu a kontaktný formulár. Celý web je optimalizovaný pre všetky zariadenia.`,
+
+    results: [
+      'Profesionálna webová prezentácia historickej kaviarní',
+      'Online menu s kategóriami (Káva, Nealko, Pivo, Alkohol)',
+      'Galéria s autentickými fotografiami priestorov',
+      'Responzívny dizajn fungujúci na všetkých zariadeniach',
+      'SEO optimalizácia pre lelšiu viditeľnosť v Levoči'
+    ],
+
+    features: [
+      '📱 Responzívny Design - Dokonale funguje na mobile, tablete aj desktope',
+      '☕ Online Menu - Prehľadný nápojový lístok s cenami a kategóriami',
+      '📸 Galéria - Fotografie interiéru a historických detailov',
+      '📝 Kontaktný Formulár - Jednoduchá komunikácia s majiteľmi',
+      '🏛️ História Kaviarene - Timeline od roku 2012 po súčasnosť',
+      '💼 Sekcia Kariéry - Stránka pre nábor nových zamestnancov',
+      '🎨 Historický Dizajn - Autentický vzhľad zachovávajúci tradíciu',
+      '⚡ Rýchle Načítanie - Optimalizované obrázky a kód'
+    ],
+
+    images: [
+      '/assets/portfolio/leutschau/hero-main.png',
+      '/assets/portfolio/leutschau/menu.png',
+      '/assets/portfolio/leutschau/gallery.png',
+      '/assets/portfolio/leutschau/history.png',
+      '/assets/portfolio/leutschau/contact.png',
+      '/assets/portfolio/leutschau/careers.png'
+    ]
+  },
+
+  {
+    slug: 'planeta-levoca',
+    title: 'Planéta Levoča',
+    shortDescription: 'Reštauračný web s jedlálnym lístkom upraviteľným majiteľom bez potreby programátora',
+    category: 'Web Design',
+    year: '2024',
+    thumbnail: '/assets/portfolio/planeta-levoca/thumbnail.png',
+    liveUrl: 'https://websolution4you.github.io/PlanetaLevoca/',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Google Sheets Integration', 'Admin Panel'],
+
+    heroImage: '/assets/portfolio/planeta-levoca/hero.png',
+
+    overview: `Planéta Levoča je príjemná reštaurácia v centre Levoče, ktorá ponúka slovenskú a medzinárodnú kuchyňu. Vytvorili sme pre nich moderný web s unikátnou funkciou - majiteľ si sám upravuje jedálny lístok bez potreby kontaktovať programátora.`,
+
+    challenge: `Reštaurácia potrebovala web s editorom menu, ktorý by mohla upravovať bez technických vedomostí. Klasické riešenie by si vyžadovalo pravidelné aktualizácie a kontakt s vývojárom. Bolo treba nájsť jedno jednoduché a efektívne riešenie.`,
+
+    solution: `Integrácia s Google Sheets umožňuje majiteľovi upravovať menu priamo v tabuľke, a zmeny sa automaticky zobrazia na webe. Zároveň existuje aj ruční admin panel ako záloha. Všetko je jednoduché a intuitívne.`,
+
+    results: [
+      'Majiteľ si sám upravuje menu bez technickej pomoci',
+      'Denné menu sa synkuje automaticky z Google Sheets',
+      'Jednoduchý admin panel s ruštinou spätne ako záloha',
+      'Profesionálny web s galériou a info o reštaurácii',
+      'Plne responzívny design pre všetky zariadenia'
+    ],
+
+    features: [
+      '🍽️ Editovateľné Menu - Majiteľ si upravuje bez programátora',
+      '📊 Google Sheets Integrácia - Automatická synchronizácia',
+      '📅 Denné Menu - Týždenný program s cenami',
+      '⚙️ Admin Panel - Jednoduchá editácia v prípade potreby',
+      '📸 Galéria - Fotografie jedál a reštaurácie',
+      '📞 Kontakt a Info - Rezervácie, otváracie hodiny, catering',
+      '🎨 Moderný Dizajn - Zlatá a oranžová farebnosť',
+      '📱 Responzívny Web - Dokonalý na mobile aj desktope'
+    ],
+
+    images: [
+      '/assets/portfolio/planeta-levoca/hero.png',
+      '/assets/portfolio/planeta-levoca/menu.png',
+      '/assets/portfolio/planeta-levoca/admin-panel.png'
     ]
   },
 
