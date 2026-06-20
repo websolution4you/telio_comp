@@ -9,6 +9,7 @@ export default function HomePage() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
   const [isHamburgerActive, setIsHamburgerActive] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
   const sections = [
@@ -77,6 +78,10 @@ export default function HomePage() {
     }, 800);
   };
 
+
+  const ITEMS_PER_PAGE = 6;
+  const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
+  const paginatedProjects = projects.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
 
   return (
     <>
@@ -164,7 +169,7 @@ export default function HomePage() {
             </div>
 
             <div className="portfolio-grid">
-              {projects.map((project) => (
+              {paginatedProjects.map((project) => (
                 <Link href={`/portfolio/${project.slug}`} key={project.slug} className="portfolio-card-link">
                   <div className="portfolio-card">
                     <div className="img-wrapper">
@@ -178,6 +183,34 @@ export default function HomePage() {
                 </Link>
               ))}
             </div>
+
+            {totalPages > 1 && (
+              <div className="pagination">
+                <button
+                  className="page-btn"
+                  onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                  disabled={currentPage === 1}
+                >
+                  <i className="fa-solid fa-chevron-left"></i>
+                </button>
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                  <button
+                    key={page}
+                    className={`page-number ${currentPage === page ? 'active' : ''}`}
+                    onClick={() => setCurrentPage(page)}
+                  >
+                    {page}
+                  </button>
+                ))}
+                <button
+                  className="page-btn"
+                  onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                  disabled={currentPage === totalPages}
+                >
+                  <i className="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            )}
           </div>
         </section>
 
