@@ -279,6 +279,26 @@ export const projects: Project[] = [
   },
 
   {
+    slug: 'milansimon',
+    title: 'Milan Šimon Photography',
+    shortDescription: 'Profesionálne fotografické portfólio zamerané na portréty, šport a reportáže',
+    category: 'Photography Portfolio',
+    year: '2024',
+    thumbnail: '/assets/portfolio/milansimon/thumbnail.png',
+    mobileThumbnail: '/assets/portfolio/milansimon/mobile_thumbnail.png',
+    liveUrl: 'https://www.milansimon.com/',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
+    heroImage: '/assets/portfolio/milansimon/thumbnail.png',
+    overview: 'Milan Šimon sa venuje umeleckej a športovej fotografii. Prezentácia slúži ako prehľadné portfólio rozdelené podľa kategórií prác.',
+    features: [
+      '📸 Portfólio rozdelené do kategórií (Portréty, Šport, Eventy)',
+      '✉️ Kontaktný formulár a informácie',
+      '⚡ Plne responzívny dizajn pre mobily a počítače'
+    ],
+    images: []
+  },
+
+  {
     slug: 'coming-soon',
     title: 'Ďalšie projekty',
     shortDescription: 'Pripravujeme viac ukážok našej práce',
@@ -287,7 +307,7 @@ export const projects: Project[] = [
     thumbnail: '/assets/portfolio.png',
     technologies: [],
     heroImage: '/assets/portfolio.png',
-    overview: 'Čoskoro pridáme ďalšie projekty do nášho portfólia.',
+    overview: 'Čoskoro pridáme ďalšie projekty do nášho portfólio.',
     features: [],
     images: []
   }

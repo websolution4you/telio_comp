@@ -605,6 +605,7 @@ a {
 
     .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: none;
         gap: 20px;
         padding: 10px 0;
         min-height: auto;
