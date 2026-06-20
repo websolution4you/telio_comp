@@ -899,3 +899,7 @@ a {
         font-size: 24px;
     }
 }
+
+.contact-link:hover {
+    color: #00d9ff !important;
+}

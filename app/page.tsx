@@ -329,6 +329,22 @@ export default function HomePage() {
               <div className="divider"></div>
               <p>Máme za sebou weby pre reštaurácie, kaviarne, autonómne hlasové ovládanie a e-commerce projekty.<br />Napíšte nám správu a dohodneme sa rýchlo a bez zbytočností.</p>
             </div>
+            
+            <div className="contact-details" style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '40px', flexWrap: 'wrap', fontSize: '15px', color: 'rgba(255, 255, 255, 0.8)', fontWeight: 500 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <i className="fa-solid fa-phone" style={{ color: '#00d9ff' }}></i>
+                <a href="tel:095012054" className="contact-link" style={{ transition: 'color 0.3s' }}>0950 120 54</a>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <i className="fa-solid fa-phone" style={{ color: '#00d9ff' }}></i>
+                <a href="tel:0915962068" className="contact-link" style={{ transition: 'color 0.3s' }}>0915 962 068</a>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <i className="fa-solid fa-envelope" style={{ color: '#00d9ff' }}></i>
+                <a href="mailto:info@telio.sk" className="contact-link" style={{ transition: 'color 0.3s' }}>info@telio.sk</a>
+              </div>
+            </div>
+
             <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
               <form action="https://formsubmit.co/info@telio.sk" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                 {/* Anti-spam honeypot */}
