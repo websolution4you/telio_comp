@@ -336,7 +336,7 @@ export default function HomePage() {
               <div className="service-card">
                 <i className="fa-solid fa-server"></i>
                 <h3>APPKY NA MIERU</h3>
-                <p>Rezervačné a objednávkové systémy, zákaznícke portály či interné firemné dashboardy plné praktických dát a štatistík.</p>
+                <p>Rezervačné a objednávkové systémy, zákaznícke portály či interné firemné dashboardy. K vašim systémom vytvoríme aj vlastnú mobilnú aplikáciu pre iOS a Android.</p>
               </div>
               <div className="service-card">
                 <i className="fa-solid fa-robot"></i>
