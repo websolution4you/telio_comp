@@ -574,8 +574,8 @@ a {
 
     .fixed-overlay {
         width: 100%;
-        top: 80px;
-        bottom: 80px;
+        top: 0;
+        bottom: 0;
     }
     
     .hero-content h1 {
@@ -659,8 +659,8 @@ a {
     }
 
     .fixed-overlay {
-        top: 80px;
-        bottom: 120px;
+        top: 0;
+        bottom: 0;
     }
 }
 
