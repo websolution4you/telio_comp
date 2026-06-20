@@ -509,6 +509,11 @@ a {
 
 /* Responsive */
 @media (max-width: 900px) {
+    html, body {
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
     .header {
         width: calc(100% - 80px);
         display: flex;
