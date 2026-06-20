@@ -55,25 +55,15 @@ export default function PortfolioDetailPage({ params }: PageProps) {
           <h1>{project.title}</h1>
           <p className="detail-short-desc">{project.shortDescription}</p>
 
-          <div className="detail-meta">
-            <div className="meta-item">
-              <span className="meta-label">Rok:</span>
-              <span className="meta-value">{project.year}</span>
-            </div>
-            {project.liveUrl && (
+          {project.liveUrl && (
+            <div className="detail-meta">
               <div className="meta-item">
                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="live-link">
                   Navštíviť web <i className="fa-solid fa-external-link"></i>
                 </a>
               </div>
-            )}
-          </div>
-
-          <div className="detail-technologies">
-            {project.technologies.map((tech) => (
-              <span key={tech} className="tech-tag">{tech}</span>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
       </section>
 
