@@ -15,12 +15,11 @@ export default function HomePage() {
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
   const sections = [
-    { id: 'home', title: 'HOME' },
-    { id: 'portfolio', title: 'PORTFOLIO' },
-    { id: 'about', title: 'ABOUT' },
-    { id: 'team', title: 'TEAM' },
-    { id: 'services', title: 'SERVICES' },
-    { id: 'contact', title: 'CONTACT' },
+    { id: 'home', title: 'DOMOV' },
+    { id: 'portfolio', title: 'PORTFÓLIO' },
+    { id: 'about', title: 'AKO PRACUJEME' },
+    { id: 'services', title: 'SLUŽBY' },
+    { id: 'contact', title: 'KONTAKT' },
   ];
 
   useEffect(() => {
@@ -135,7 +134,7 @@ export default function HomePage() {
 
       {/* Logo & Mobile Menu */}
       <header className="header">
-        <div className="logo">TelioLabs</div>
+        <div className="logo" style={{ cursor: 'pointer' }} onClick={() => goToSection(0)}>TelioLabs</div>
         <div
           className={`hamburger ${isHamburgerActive ? 'active' : ''}`}
           onClick={() => setIsHamburgerActive(!isHamburgerActive)}
@@ -178,7 +177,7 @@ export default function HomePage() {
             <p>Nevytvárame len jednoduché stránky zo šablóny. Navrhujeme funkčné riešenia,<br />ktoré pomáhajú firmám získavať zákazníkov a prispôsobujeme funkčnosť ich potrebám.</p>
 
             <div className="cta-buttons">
-              <a href="#services" className="btn btn-primary" onClick={(e) => { e.preventDefault(); goToSection(4); }}>Naše služby</a>
+              <a href="#services" className="btn btn-primary" onClick={(e) => { e.preventDefault(); goToSection(3); }}>Naše služby</a>
               <a href="#portfolio" className="btn btn-outline" onClick={(e) => { e.preventDefault(); goToSection(1); }}>Ukážky prác <i className="fa-solid fa-chevron-right"></i></a>
             </div>
           </div>
@@ -285,40 +284,11 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Team Sekcia */}
-        <section
-          id="team"
-          className="section team-section"
-          ref={(el) => { sectionRefs.current[3] = el; }}
-        >
-          <div className="container">
-            <div className="section-header">
-              <h2>Team</h2>
-              <div className="divider"></div>
-              <p>Navrhujeme riešenia pre rôzne odvetvia. Každý náš model sa dá upraviť na mieru<br />podľa špecifických potrieb vašej firmy a vašich zákazníkov.</p>
-            </div>
-
-            <div className="team-grid">
-              {[1, 2, 3, 4].map((member) => (
-                <div className="team-card" key={member}>
-                  <div className="img-wrapper">
-                    <img src="/assets/team.png" alt="Ukážka odvetvia" />
-                  </div>
-                  <div className="card-info">
-                    <h3>{member === 1 ? 'TAXI SLUŽBA' : member === 2 ? 'AUTOSERVIS' : member === 3 ? 'UBYTOVANIE' : 'REŠTAURÁCIE'}</h3>
-                    <span>{member === 1 ? 'AI hlasový dispečer' : member === 2 ? 'Online rezervačný systém' : member === 3 ? 'Rezervačný & riadiaci panel' : 'Objednávky stolov cez web'}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Services Sekcia */}
         <section
           id="services"
           className="section services-section"
-          ref={(el) => { sectionRefs.current[4] = el; }}
+          ref={(el) => { sectionRefs.current[3] = el; }}
         >
           <div className="container">
             <div className="section-header">
@@ -351,7 +321,7 @@ export default function HomePage() {
         <section
           id="contact"
           className="section contact-section"
-          ref={(el) => { sectionRefs.current[5] = el; }}
+          ref={(el) => { sectionRefs.current[4] = el; }}
         >
           <div className="container">
             <div className="section-header">

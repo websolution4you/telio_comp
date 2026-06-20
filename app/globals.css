@@ -518,10 +518,19 @@ a {
     }
 
     .header {
-        width: calc(100% - 80px);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 40px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        background: rgba(13, 21, 32, 0.9);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        z-index: 1000;
     }
 
     .hamburger {
@@ -622,9 +631,10 @@ a {
 
 @media (max-width: 600px) {
     .header {
-        top: 20px;
-        left: 20px;
-        width: calc(100% - 40px);
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 20px;
     }
 
     .footer-bottom {
