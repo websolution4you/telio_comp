@@ -3,16 +3,23 @@
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { projects } from './data/projects';
 
 export default function HomePage() {
+  const router = useRouter();
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
   const isScrollingRef = useRef(false);
   const [isHamburgerActive, setIsHamburgerActive] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(4);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
+
+  const galleryProjects = projects.filter(p => p.slug !== 'coming-soon');
 
   const sections = [
     { id: 'home', title: 'HOME' },
@@ -91,6 +98,46 @@ export default function HomePage() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Keyboard navigation for Lightbox
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (lightboxIndex === null) return;
+      if (e.key === 'ArrowRight') {
+        setLightboxIndex(prev => (prev !== null) ? (prev + 1) % galleryProjects.length : null);
+      } else if (e.key === 'ArrowLeft') {
+        setLightboxIndex(prev => (prev !== null) ? (prev - 1 + galleryProjects.length) % galleryProjects.length : null);
+      } else if (e.key === 'Escape') {
+        setLightboxIndex(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxIndex, galleryProjects.length]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      setLightboxIndex(prev => (prev !== null) ? (prev + 1) % galleryProjects.length : null);
+    } else if (isRightSwipe) {
+      setLightboxIndex(prev => (prev !== null) ? (prev - 1 + galleryProjects.length) % galleryProjects.length : null);
+    }
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
 
   const goToSection = (index: number) => {
     if (index < 0 || index >= sections.length) return;
@@ -208,8 +255,9 @@ export default function HomePage() {
             </div>
 
             <div className="portfolio-grid">
-              {paginatedProjects.map((project) => (
-                <Link href={`/portfolio/${project.slug}`} key={project.slug} className="portfolio-card-link">
+              {paginatedProjects.map((project) => {
+                const isComingSoon = project.slug === 'coming-soon';
+                const cardContent = (
                   <div className="portfolio-card">
                     <div className="img-wrapper">
                       <picture style={{ width: '100%', height: '100%', display: 'block' }}>
@@ -222,10 +270,47 @@ export default function HomePage() {
                     <div className="card-info">
                       <h3>{project.title}</h3>
                       <span className="project-category">{project.category}</span>
+                      {!isComingSoon && (
+                        <div className="card-actions" onClick={(e) => e.stopPropagation()}>
+                          <button
+                            className="action-btn gallery-btn"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              const idx = galleryProjects.findIndex(p => p.slug === project.slug);
+                              if (idx !== -1) setLightboxIndex(idx);
+                            }}
+                          >
+                            <i className="fa-solid fa-expand"></i> Náhľad
+                          </button>
+                          <Link href={`/portfolio/${project.slug}`} className="action-btn detail-btn">
+                            <i className="fa-solid fa-circle-info"></i> Detail
+                          </Link>
+                        </div>
+                      )}
                     </div>
                   </div>
-                </Link>
-              ))}
+                );
+
+                if (isComingSoon) {
+                  return (
+                    <div key={project.slug} className="portfolio-card-link">
+                      {cardContent}
+                    </div>
+                  );
+                }
+
+                return (
+                  <div
+                    key={project.slug}
+                    className="portfolio-card-link"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => router.push(`/portfolio/${project.slug}`)}
+                  >
+                    {cardContent}
+                  </div>
+                );
+              })}
             </div>
 
             {totalPages > 1 && (
@@ -368,6 +453,61 @@ export default function HomePage() {
           </div>
         </section>
       </main>
+
+      {/* Lightbox Galéria */}
+      <div 
+        className={`lightbox-backdrop ${lightboxIndex !== null ? 'open' : ''}`}
+        onClick={() => setLightboxIndex(null)}
+      >
+        {lightboxIndex !== null && (
+          <div 
+            className="lightbox-content" 
+            onClick={(e) => e.stopPropagation()}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            <button className="lightbox-close" onClick={() => setLightboxIndex(null)}>
+              <i className="fa-solid fa-xmark"></i>
+            </button>
+
+            <button 
+              className="lightbox-nav lightbox-prev" 
+              onClick={() => setLightboxIndex(prev => (prev !== null) ? (prev - 1 + galleryProjects.length) % galleryProjects.length : null)}
+            >
+              <i className="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div className="lightbox-image-wrapper">
+              <picture>
+                {galleryProjects[lightboxIndex].mobileThumbnail && (
+                  <source media="(max-width: 900px)" srcSet={galleryProjects[lightboxIndex].mobileThumbnail} />
+                )}
+                <img src={galleryProjects[lightboxIndex].thumbnail} alt={galleryProjects[lightboxIndex].title} />
+              </picture>
+            </div>
+
+            <button 
+              className="lightbox-nav lightbox-next" 
+              onClick={() => setLightboxIndex(prev => (prev !== null) ? (prev + 1) % galleryProjects.length : null)}
+            >
+              <i className="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <div className="lightbox-caption">
+              <h3>{galleryProjects[lightboxIndex].title}</h3>
+              <p>{galleryProjects[lightboxIndex].category}</p>
+              <Link 
+                href={`/portfolio/${galleryProjects[lightboxIndex].slug}`} 
+                className="lightbox-detail-link"
+                onClick={() => setLightboxIndex(null)}
+              >
+                Pozrieť detail <i className="fa-solid fa-arrow-right"></i>
+              </Link>
+            </div>
+          </div>
+        )}
+      </div>
     </>
   );
 }
