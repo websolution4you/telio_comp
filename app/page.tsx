@@ -46,19 +46,39 @@ export default function HomePage() {
   }, []);
 
   useEffect(() => {
+    let wheelTimeout: NodeJS.Timeout | null = null;
+    let accumulatedDelta = 0;
+
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
       if (isScrollingRef.current) return;
 
-      if (e.deltaY > 0) {
-        goToSection(currentSectionIndex + 1);
-      } else {
-        goToSection(currentSectionIndex - 1);
+      // Accumulate delta from multiple wheel events (touchpad)
+      accumulatedDelta += e.deltaY;
+
+      // Clear previous timeout
+      if (wheelTimeout) {
+        clearTimeout(wheelTimeout);
       }
+
+      // Wait for wheel events to settle (50ms without new events)
+      wheelTimeout = setTimeout(() => {
+        if (Math.abs(accumulatedDelta) > 30) { // Threshold to avoid micro-scrolls
+          if (accumulatedDelta > 0) {
+            goToSection(currentSectionIndex + 1);
+          } else {
+            goToSection(currentSectionIndex - 1);
+          }
+        }
+        accumulatedDelta = 0;
+      }, 50);
     };
 
     window.addEventListener('wheel', handleWheel, { passive: false });
-    return () => window.removeEventListener('wheel', handleWheel);
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      if (wheelTimeout) clearTimeout(wheelTimeout);
+    };
   }, [currentSectionIndex]);
 
   const isFirstMount = useRef(true);
@@ -134,7 +154,7 @@ export default function HomePage() {
 
       {/* Logo & Mobile Menu */}
       <header className="header">
-        <div className="logo" style={{ cursor: 'pointer' }} onClick={() => goToSection(0)}>TelioLabs</div>
+        <a href="https://www.telio.sk" className="logo" style={{ cursor: 'pointer', textDecoration: 'none', color: 'inherit' }}>TelioLabs</a>
         <div
           className={`hamburger ${isHamburgerActive ? 'active' : ''}`}
           onClick={() => setIsHamburgerActive(!isHamburgerActive)}
@@ -174,7 +194,7 @@ export default function HomePage() {
         >
           <div className="container hero-content">
             <h1>Profesionálne weby a systémy na mieru</h1>
-            <p>Nevytvárame len jednoduché stránky zo šablóny. Navrhujeme funkčné riešenia,<br />ktoré pomáhajú firmám získavať zákazníkov a prispôsobujeme funkčnosť ich potrebám.</p>
+            <p>Nevytvárame len jednoduché stránky zo šablóny. Navrhujeme funkčné riešenia, ktoré pomáhajú firmám získavať zákazníkov a prispôsobujeme funkčnosť ich potrebám.</p>
 
             <div className="cta-buttons">
               <a href="#services" className="btn btn-primary" onClick={(e) => { e.preventDefault(); goToSection(3); }}>Naše služby</a>
@@ -312,6 +332,7 @@ export default function HomePage() {
                 <i className="fa-solid fa-robot"></i>
                 <h3>AI AUTOMATIZÁCIA</h3>
                 <p>Autonómny hlasový AI dispečer, ktorý dokáže vybaviť hovor, alebo špecializovaný chatbot pre inteligentnú online komunikáciu so zákazníkom.</p>
+                <p>Pozri <a href="https://www.telio.sk" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>www.telio.sk</a></p>
               </div>
             </div>
           </div>
@@ -327,7 +348,7 @@ export default function HomePage() {
             <div className="section-header">
               <h2>Kontakt</h2>
               <div className="divider"></div>
-              <p>Máme za sebou weby pre reštaurácie, kaviarne, autonómne hlasové ovládanie a e-commerce projekty.<br />Napíšte nám správu a dohodneme sa rýchlo a bez zbytočností.</p>
+              <p><br />Napíšte nám správu a dohodneme sa rýchlo a bez zbytočností.</p>
             </div>
             
             <div className="contact-details" style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '40px', flexWrap: 'wrap', fontSize: '15px', color: 'rgba(255, 255, 255, 0.8)', fontWeight: 500 }}>

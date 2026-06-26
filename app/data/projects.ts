@@ -22,7 +22,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: 'telio',
-    title: 'Telio AI Assistant',
+    title: 'Telio AI Hlasový Assistant',
     shortDescription: 'Komplexný AI hlasový asistent a dashboard systém pre automatizáciu prevádzky pizzerií a taxi služieb',
     category: 'AI Automation & Dashboard',
     year: '2024',
@@ -35,9 +35,9 @@ export const projects: Project[] = [
 
     overview: `Telio je inovatívny AI hlasový asistent, ktorý funguje 24/7 a dokáže spracovať hovory, rezervácie a objednávky úplne autonómne. Systém je doplnený o sofistikované dashboardy pre real-time sledovanie prevádzky.`,
 
-    challenge: `Klienti potrebovali riešenie, ktoré eliminuje nutnosť mať dispečera 24/7. Hlavnou výzvou bolo vytvoriť AI systém schopný prirodzene komunikovať v slovenčine, spracovať hovory pod 2 sekundy a zároveň poskytovať majiteľom detailný prehľad o prevádzke.`,
+    challenge: `Klienti potrebovali riešenie, ktoré eliminuje nutnosť mať dispečera 24/7. Hlavnou výzvou bolo vytvoriť AI systém schopný prirodzene komunikovať v slovenčine a zároveň poskytovať majiteľom detailný prehľad o prevádzke.`,
 
-    solution: `Navrhli sme multi-odvetvový systém kombinujúci AI hlasovú technológiu s real-time dashboardmi. Systém dokáže prijať hovor, pochopiť požiadavku zákazníka a vytvorí objednávku alebo rezerváciu úplne automaticky.`,
+    solution: `Navrhli sme multi-odvetvový systém kombinujúci AI hlasovú technológiu s real-time dashboardmi. Systém dokáže prijať hovor, pochopiť požiadavku zákazníka a vytvorí objednávku alebo rezerváciu úplne automaticky. Rezeerváciu zapíše do kalendára, alebo do dashboardu`,
 
     results: [
       'Priemerný čas odpovede pod 2 sekundy',
@@ -63,8 +63,7 @@ export const projects: Project[] = [
       '/assets/portfolio/telio/taxi-dispatch-clean.png',  // 1 - Taxi dispatch clean (obrázok 20)
       '/assets/portfolio/telio/pizza-orders.png',         // 2 - Pizza orders
       '/assets/portfolio/telio/heatmaps.png',             // 3 - Heatmaps
-      '/assets/portfolio/telio/menu-editor.png',          // 4 - Menu editor
-      '/assets/portfolio/telio/chatbot-analytics.png'     // 5 - Chatbot analytics (obrázok 18)
+      '/assets/portfolio/telio/menu-editor.png'           // 4 - Menu editor
     ]
   },
 
@@ -89,7 +88,6 @@ export const projects: Project[] = [
 
     results: [
       'Profesionálna vizitka spoločnosti pre medzinárodných partnerov',
-      'Prehľadne rozdelené sekcie služieb (mechanická časť, elektrická časť)',
       'Prezentácia kľúčových hodnôt a dôrazu na bezpečnosť pri práci',
       'Kompletne responzívny web optimalizovaný pre mobilné zobrazenie'
     ],
@@ -120,7 +118,7 @@ export const projects: Project[] = [
 
     heroImage: '/assets/portfolio/detskezlavy/hero.png',
 
-    overview: `DetskéZľavy.sk is a Slovak discount aggregator that specializes exclusively on offers and deals related to baby goods, toys, clothes, or family experiences. It allows users to find the best discounts in one place.`,
+    overview: `DetskéZľavy.sk je slovenský agregátor zliav, ktorý sa špecializuje výhradne na ponuky a výhodné akcie týkajúce sa detského tovaru, hračiek, oblečenia alebo rodinných zážitkov. Umožňuje užívateľom nájsť najlepšie zľavy na jednom mieste.`,
 
     challenge: `Vytvoriť prehľadný vyhľadávací a filtračný systém, ktorý umožní rodičom rýchlo vyhľadať zľavy podľa lokality, kategórie alebo výšky zľavy.`,
 
@@ -159,11 +157,11 @@ export const projects: Project[] = [
 
     heroImage: '/assets/portfolio/atelier-inak/hero.png',
 
-    overview: `Ateliér INAK, vedený Irenou Lehotskou, je miestom pre tvorivý rozvoj a sebapoznanie. Ponúka individuálnu aj skupinovú arteterapiu, kreatívne workshopy pre deti a dospelých a metodické vzdelávanie pre učiteľov.`,
+    overview: `Ateliér INAK je miestom pre tvorivý rozvoj a sebapoznanie. Ponúka individuálnu aj skupinovú arteterapiu, kreatívne workshopy pre deti a dospelých a metodické vzdelávanie pre učiteľov.`,
 
     challenge: `Vytvoriť priateľský, inšpiratívny a vizuálne pestrý web, ktorý by odrážal slobodnú tvorivú atmosféru ateliéru a zároveň prehľadne štruktúroval rôznorodé služby a workshopy.`,
 
-    solution: `Navrhli sme teplý a umelecky ladený web s farebnou paletou na mieru, interaktívnou galériou prác účastníkov s lightboxom, prehľadnými popismi služieb a referenciami klientov.`,
+    solution: `Navrhli sme teplý a umelecky ladený web s farebnou paletou na mieru, interaktívnou galériou prác účastníkov s lightboxom, prehľadnými popismi služieb a referenciami klientov. Do webu sme pridali unikátnu administrátorskú funkciu pre majiteľa stránky, kde si jednoduchým spôsobom sám pridá a odoberie fotky v Galérii alebo informácie v Novinkách. Týmto krokom sa zabezpečí aktuálnosť webovej stránky bez potreby zásahov programátorov webu.`,
 
     results: [
       'Útulný a inšpiratívny dizajn zodpovedajúci identite ateliéru',
@@ -200,12 +198,12 @@ export const projects: Project[] = [
 
     overview: `Leutschau Café je historická kaviareň v Levoči, ktorá sídli v mešťianskom dome z 15. storočia. Vytvorili sme pre nich web, ktorý kombinuje historický charakter s moderným dizajnom a poskytuje návštevníkom všetky potrebné informácie.`,
 
-    challenge: `Kaviareň potrebovala webovú stránku, ktorá by odzrkadľovala jej jedinečný historický charakter a zároveň poskytla moderné funkcie ako online menu, galériu a kontaktný formulár. Dôležité bolo zachovať autentický pocit tradície pri zachovaní prehľadnosti a použiteľnosti.`,
+    challenge: `Kaviareň potrebovala webovú stránku, ktorá by odzrkadľovala jej jedinečný historický charakter a zároveň poskytla moderné funkcie ako galériu a kontaktný formulár. Dôležité bolo zachovať autentický pocit tradície pri zachovaní prehľadnosti a použiteľnosti.`,
 
     solution: `Navrhli sme elegantný responzívny web s čistým dizajnom, ktorý zdôrazňuje históriu kaviarene. Implementovali sme jednoduchú navigáciu, filtrovateľné online menu s cenami, foto galériu a kontaktný formulár. Celý web je optimalizovaný pre všetky zariadenia.`,
 
     results: [
-      'Profesionálna webová prezentácia historickej kaviarní',
+      'Profesionálna webová prezentácia historickej kaviarne',
       'Online menu s kategóriami (Káva, Nealko, Pivo, Alkohol)',
       'Galéria s autentickými fotografiami priestorov',
       'Responzívny dizajn fungujúci na všetkých zariadeniach',
