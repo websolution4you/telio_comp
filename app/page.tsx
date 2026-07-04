@@ -45,41 +45,7 @@ export default function HomePage() {
     }
   }, []);
 
-  useEffect(() => {
-    let wheelTimeout: NodeJS.Timeout | null = null;
-    let accumulatedDelta = 0;
 
-    const handleWheel = (e: WheelEvent) => {
-      e.preventDefault();
-      if (isScrollingRef.current) return;
-
-      // Accumulate delta from multiple wheel events (touchpad)
-      accumulatedDelta += e.deltaY;
-
-      // Clear previous timeout
-      if (wheelTimeout) {
-        clearTimeout(wheelTimeout);
-      }
-
-      // Wait for wheel events to settle (50ms without new events)
-      wheelTimeout = setTimeout(() => {
-        if (Math.abs(accumulatedDelta) > 30) { // Threshold to avoid micro-scrolls
-          if (accumulatedDelta > 0) {
-            goToSection(currentSectionIndex + 1);
-          } else {
-            goToSection(currentSectionIndex - 1);
-          }
-        }
-        accumulatedDelta = 0;
-      }, 50);
-    };
-
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    return () => {
-      window.removeEventListener('wheel', handleWheel);
-      if (wheelTimeout) clearTimeout(wheelTimeout);
-    };
-  }, [currentSectionIndex]);
 
   const isFirstMount = useRef(true);
 
@@ -103,15 +69,45 @@ export default function HomePage() {
     const handleResize = () => {
       setItemsPerPage(window.innerWidth <= 900 ? 3 : 4);
     };
-    
+
     // Initial run
     handleResize();
-    
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-50% 0px',
+      threshold: 0
+    };
 
+    const observerCallback: IntersectionObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !isScrollingRef.current) {
+          const index = sectionRefs.current.findIndex(ref => ref === entry.target);
+          if (index !== -1) {
+            setCurrentSectionIndex(index);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    const currentRefs = sectionRefs.current;
+    currentRefs.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      currentRefs.forEach((section) => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
 
   const goToSection = (index: number) => {
     if (index < 0 || index >= sections.length) return;
@@ -154,7 +150,7 @@ export default function HomePage() {
 
       {/* Logo & Mobile Menu */}
       <header className="header">
-        <a href="https://www.telio.sk" className="logo" style={{ cursor: 'pointer', textDecoration: 'none', color: 'inherit' }}>TelioLabs</a>
+        <a href="https://teliolabs.sk" className="logo" style={{ cursor: 'pointer', textDecoration: 'none', color: 'inherit' }}>TelioLabs</a>
         <div
           className={`hamburger ${isHamburgerActive ? 'active' : ''}`}
           onClick={() => setIsHamburgerActive(!isHamburgerActive)}
@@ -350,11 +346,11 @@ export default function HomePage() {
               <div className="divider"></div>
               <p><br />Napíšte nám správu a dohodneme sa rýchlo a bez zbytočností.</p>
             </div>
-            
+
             <div className="contact-details" style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '40px', flexWrap: 'wrap', fontSize: '15px', color: 'rgba(255, 255, 255, 0.8)', fontWeight: 500 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <i className="fa-solid fa-phone" style={{ color: '#00d9ff' }}></i>
-                <a href="tel:095012054" className="contact-link" style={{ transition: 'color 0.3s' }}>0950 120 54</a>
+                <a href="tel:095012054" className="contact-link" style={{ transition: 'color 0.3s' }}>0905 012 054</a>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <i className="fa-solid fa-phone" style={{ color: '#00d9ff' }}></i>
@@ -372,7 +368,7 @@ export default function HomePage() {
                 <input type="text" name="_honey" style={{ display: 'none' }} />
                 {/* Disable Captcha for smoother experience */}
                 <input type="hidden" name="_captcha" value="false" />
-                
+
                 <input type="text" name="name" required placeholder="Vaše Meno" style={{ padding: '15px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff' }} />
                 <input type="email" name="email" required placeholder="Váš E-mail" style={{ padding: '15px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff' }} />
                 <textarea name="message" required placeholder="Vaša Správa" rows={5} style={{ padding: '15px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff', resize: 'none' }}></textarea>

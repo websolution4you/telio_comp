@@ -300,6 +300,29 @@ export const projects: Project[] = [
   },
 
   {
+    slug: 'tomilevoca',
+    title: 'Tomi Štúdio Levoča',
+    shortDescription: 'Profesionálne pánske kaderníctvo a holičstvo v Levoči s moderným dizajnom webu.',
+    category: 'Barbershop Web',
+    year: '2024',
+    thumbnail: '/assets/portfolio/tomilevoca/thumbnail.png',
+    mobileThumbnail: '/assets/portfolio/tomilevoca/mobile_thumbnail.png',
+    liveUrl: 'https://tomilevoca.sk/',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
+    heroImage: '/assets/portfolio/tomilevoca/hero.png',
+    overview: 'Pre Tomi Štúdio, profesionálne pánske kaderníctvo a holičstvo v Levoči, sme vytvorili modernú a štýlovú webovú stránku. Stránka prehľadne prezentuje služby, cenník a umožňuje jednoduchý kontakt.',
+    features: [
+      '✂️ Prehľadná prezentácia služieb a cenníka',
+      '📍 Integrovaná mapa a kontaktné údaje',
+      '📱 Plne responzívny dizajn pre mobily a počítače',
+      '🚀 Rýchle načítanie a moderné animácie'
+    ],
+    images: [
+      '/assets/portfolio/tomilevoca/hero.png'
+    ]
+  },
+
+  {
     slug: 'coming-soon',
     title: 'Ďalšie projekty',
     shortDescription: 'Pripravujeme viac ukážok našej práce',
