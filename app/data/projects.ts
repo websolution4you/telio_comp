@@ -75,7 +75,7 @@ export const projects: Project[] = [
     year: '2024',
     thumbnail: '/assets/portfolio/jdm-lifts/thumbnail.png',
     mobileThumbnail: '/assets/portfolio/jdm-lifts/mobile_thumbnail.png',
-    liveUrl: 'https://jdmlifts.sk/',
+    liveUrl: 'https://www.jdmlifts.sk',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'Firebase Hosting'],
 
     heroImage: '/assets/portfolio/jdm-lifts/hero.png',
@@ -152,7 +152,7 @@ export const projects: Project[] = [
     year: '2024',
     thumbnail: '/assets/portfolio/atelier-inak/thumbnail.png',
     mobileThumbnail: '/assets/portfolio/atelier-inak/mobile_thumbnail.png',
-    liveUrl: 'https://websolution4you.github.io/AtelierInak/index.html',
+    liveUrl: 'https://www.artinak.sk',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'GLightbox', 'GitHub Pages'],
 
     heroImage: '/assets/portfolio/atelier-inak/hero.png',
@@ -239,7 +239,7 @@ export const projects: Project[] = [
     year: '2024',
     thumbnail: '/assets/portfolio/planeta-levoca/thumbnail.png',
     mobileThumbnail: '/assets/portfolio/planeta-levoca/mobile_thumbnail.png',
-    liveUrl: 'https://www.PlanetaLevoca.sk/',
+    liveUrl: 'https://www.planetalevoca.sk',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Google Sheets Integration', 'Admin Panel'],
 
     heroImage: '/assets/portfolio/planeta-levoca/hero.png',
@@ -307,7 +307,7 @@ export const projects: Project[] = [
     year: '2024',
     thumbnail: '/assets/portfolio/tomilevoca/thumbnail.png',
     mobileThumbnail: '/assets/portfolio/tomilevoca/mobile_thumbnail.png',
-    liveUrl: 'https://tomilevoca.sk/',
+    liveUrl: 'https://www.tomilevoca.sk',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
     heroImage: '/assets/portfolio/tomilevoca/hero.png',
     overview: 'Pre Tomi Štúdio, profesionálne pánske kaderníctvo a holičstvo v Levoči, sme vytvorili modernú a štýlovú webovú stránku. Stránka prehľadne prezentuje služby, cenník a umožňuje jednoduchý kontakt.',
