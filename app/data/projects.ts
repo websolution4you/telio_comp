@@ -75,7 +75,7 @@ export const projects: Project[] = [
     year: '2024',
     thumbnail: '/assets/portfolio/jdm-lifts/thumbnail.png',
     mobileThumbnail: '/assets/portfolio/jdm-lifts/mobile_thumbnail.png',
-    liveUrl: 'https://jdmlifts-b1238.web.app/',
+    liveUrl: 'https://jdmlifts.sk/',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'Firebase Hosting'],
 
     heroImage: '/assets/portfolio/jdm-lifts/hero.png',
@@ -191,7 +191,7 @@ export const projects: Project[] = [
     year: '2024',
     thumbnail: '/assets/portfolio/leutschau/thumbnail.png',
     mobileThumbnail: '/assets/portfolio/leutschau/mobile_thumbnail.png',
-    liveUrl: 'https://websolution4you.github.io/LeutschauCaffe/',
+    liveUrl: 'https://www.leutschau.sk/',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'Bootstrap'],
 
     heroImage: '/assets/portfolio/leutschau/hero-main.png',
@@ -239,7 +239,7 @@ export const projects: Project[] = [
     year: '2024',
     thumbnail: '/assets/portfolio/planeta-levoca/thumbnail.png',
     mobileThumbnail: '/assets/portfolio/planeta-levoca/mobile_thumbnail.png',
-    liveUrl: 'https://websolution4you.github.io/PlanetaLevoca/',
+    liveUrl: 'https://www.PlanetaLevoca.sk/',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Google Sheets Integration', 'Admin Panel'],
 
     heroImage: '/assets/portfolio/planeta-levoca/hero.png',

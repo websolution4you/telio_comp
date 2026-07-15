@@ -60,9 +60,18 @@ a {
 /* Header & Logo */
 .header {
     position: fixed;
-    top: 40px;
-    left: 40px;
-    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 40px;
+    z-index: 1000;
+    background: #0d1520;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
@@ -525,7 +534,7 @@ a {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: rgba(13, 21, 32, 0.9);
+        background: #0d1520;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);

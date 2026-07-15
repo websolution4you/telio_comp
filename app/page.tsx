@@ -200,7 +200,7 @@ export default function HomePage() {
 
           <div className="footer-bottom">
             <div className="copyright">
-              &copy; 2026 Tanes. - Všetky práva vyhradené
+              &copy; 2026 Telio.sk - Všetky práva vyhradené
             </div>
             <div className="social-icons">
               <a href="#"><i className="fa-brands fa-facebook-f"></i></a>

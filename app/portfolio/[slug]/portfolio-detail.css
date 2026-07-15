@@ -37,7 +37,7 @@ body:has(.portfolio-detail-page.fade-in) {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(10, 14, 26, 0.9);
+  background: #0a0e1a;
   backdrop-filter: blur(10px);
   z-index: 1000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
