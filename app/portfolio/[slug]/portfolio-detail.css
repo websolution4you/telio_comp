@@ -390,6 +390,15 @@ body:has(.portfolio-detail-page.fade-in) {
     padding: 60px 30px;
   }
 
+  .content-section h2 {
+    text-align: center;
+  }
+
+  .content-section h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .features-grid,
   .image-gallery {
     grid-template-columns: 1fr;
@@ -440,6 +449,7 @@ body:has(.portfolio-detail-page.fade-in) {
 
   .detail-meta {
     flex-direction: column;
+    align-items: center;
     gap: 20px;
   }
 }
